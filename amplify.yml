@@ -17,7 +17,7 @@ frontend:
       commands:
         - chmod +x ./_site/assets/startup/build.sh
         - ./_site/assets/startup/build.sh
-        - "if [ -v SLACK_WEBHOOK_URL ]; then curl -X POST -H 'Content-type: application/json' --data '{\"blocks\":[{\"type\": \"section\",\"text\": {\"type\": \"mrkdwn\",\"text\": \"*Github Repo:* '$AWS_CLONE_URL'\n*Branch:* '$AWS_BRANCH'\n*Status*: Build successful.\"}}]}' $SLACK_WEBHOOK_URLL; fi;"
+        - "if [ -v SLACK_WEBHOOK_URL ]; then curl -X POST -H 'Content-type: application/json' --data '{\"blocks\":[{\"type\": \"section\",\"text\": {\"type\": \"mrkdwn\",\"text\": \"*Github Repo:* '$AWS_CLONE_URL'\n*Branch:* '$AWS_BRANCH'\n*Status*: Build successful.\"}}]}' $SLACK_WEBHOOK_URL; fi;"
       
   artifacts:
     baseDirectory: _site
